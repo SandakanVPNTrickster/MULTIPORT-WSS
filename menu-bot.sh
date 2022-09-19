@@ -98,9 +98,9 @@ echo -ne " ADMIN ID  : "
 read adm_ids
 echo "Admin_ID: $adm_ids" >>/root/ResBotAuth
 }
-echo -ne " BOT NAMME : "
+echo -ne " BOT NAME : "
 read bot_user
-[[ -z $bot_user ]] && bot_user=" "
+[[ -z $bot_user ]] && bot_user="squidBot"
 echo ""
 echo -ne " LIMIT     : "
 read limit_pnl
