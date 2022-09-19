@@ -212,7 +212,7 @@ wget https://raw.githubusercontent.com/SandakanVPNTrickster/MULTIPORT-WSS/main/i
 clear
 echo -e "$green[INFO]$NC Download Extra Menu"
 sleep 2
-wget https://raw.githubusercontent.com/SandakanVPNTrickster/MULTIPORT-WSS/main/update/update.sh && chmod +x update.sh && ./update.sh
+wget https://raw.githubusercontent.com/SandakanVPNTrickster/MULTIPORT-WSS/main/update.sh && chmod +x update.sh && ./update.sh
 clear
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.
@@ -301,6 +301,7 @@ echo "" | tee -a log-install.txt
 rm /root/cf.sh >/dev/null 2>&1
 rm /root/setup.sh >/dev/null 2>&1
 rm /root/insshws.sh
+rm /root/update.sh
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo -e "
 "
