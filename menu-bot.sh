@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 ipes=$(curl -sS ipv4.icanhazip.com)
-surat=$(curl -sS https://raw.githubusercontent.com/SandakanVPNTrickster/MULTIPORT-WSS/main/permission/ip | grep -w $ipes | awk '{print $4}')
+surat=$(curl -sS https://raw.githubusercontent.com/SandakanVPNTrickster/main/pernission/ip | grep -w $ipes | awk '{print $4}')
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 if [[ "$surat" = "true" ]]; then
   echo -ne
@@ -24,7 +24,7 @@ dircreate() {
 fun_botOnOff() {
   dircreate
   [[ ! -f /root/multi/bot.conf ]] && {
-    echo -e "Aixxy Bot Panel Installer
+    echo -e "SquidVPN Bot Panel Installer
         "
     [[ ! -f /root/ResBotAuth ]] && {
       echo -ne "Input your Bot TOKEN : "
