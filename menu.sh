@@ -190,13 +190,13 @@ echo -e ""
 echo -e "   ${COLOR1}[06]${NC} • SET DNS  [${YELLOW}Menu${NC}]"
 echo -e "   ${COLOR1}[07]${NC} • THEME    [${YELLOW}Menu${NC}]"
 echo -e "   ${COLOR1}[08]${NC} • BACKUP   [${YELLOW}Menu${NC}]"
-echo -e "   ${COLOR1}[09]${NC} • ADD HOST/DOMAIN $NC"
-echo -e "   ${COLOR1}[10]${NC} • RENEW CERT $NC"  
-echo -e "   ${COLOR1}[11]${NC} • SETTINGS [${YELLOW}Menu${NC}]"
-echo -e "   ${COLOR1}[12]${NC} • INFO     [${YELLOW}Menu${NC}]"
+echo -e "   ${COLOR1}[09]${NC} • SETTINGS [${YELLOW}Menu${NC}]"
+echo -e "   ${COLOR1}[10]${NC} • INFO     [${YELLOW}Menu${NC}]"
+echo -e "   ${COLOR1}[11]${NC} • ADD HOST/DOMAIN $NC"
+echo -e "   ${COLOR1}[12]${NC} • RENEW CERT $NC"  
 if [ "$Isadmin" = "ON" ]; then
 echo -e "                                                  $COLOR1$NC"
-echo -e "   ${COLOR1}[13]${NC} • REG IP  [${YELLOW}Menu${NC}]"
+echo -e "   ${COLOR1}[13]${NC} • REG IP   [${YELLOW}Menu${NC}]"
 echo -e "   ${COLOR1}[14]${NC} • SET BOT  [${YELLOW}Menu${NC}]"
 ressee="menu-ip"
 bottt="menu-bot"
@@ -246,12 +246,12 @@ case $opt in
 04 | 4) clear ; menu-trojan ;;
 05 | 5) clear ; menu-ss ;;
 06 | 6) clear ; menu-dns ;;
-06 | 7) clear ; menu-theme ;;
+07 | 7) clear ; menu-theme ;;
 07 | 8) clear ; menu-backup ;;
-09 | 9) clear ; add-host ;;
-10) clear ; crtxray ;;
-11) clear ; menu-set ;;
-12) clear ; info ;;
+09 | 9) clear ; menu-set ;;
+10) clear ; info ;;
+11) clear ; add-host ;;
+12) clear ; crtxray ;;
 13) clear ; $ressee ;;
 14) clear ; $bottt ;;
 100) clear ; $up2u ;;
