@@ -100,7 +100,7 @@ echo "Admin_ID: $adm_ids" >>/root/ResBotAuth
 }
 echo -ne " BOT NAMME : "
 read bot_user
-[[ -z $bot_user ]] && bot_user="KennxvBOT"
+[[ -z $bot_user ]] && bot_user=" "
 echo ""
 echo -ne " LIMIT     : "
 read limit_pnl
