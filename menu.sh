@@ -152,9 +152,9 @@ menu
 }
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}               • VPS PANEL MENU •              ${NC} $COLOR1│$NC"
+echo -e "$COLOR1 ${NC} ${COLBG1}               • VPS PANEL MENU •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e ""
 uphours=`uptime -p | awk '{print $2,$3}' | cut -d , -f1`
 upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
 uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
@@ -175,28 +175,35 @@ fi
 echo -e "$COLOR1 $NC Memory Usage   : $uram / $tram"
 echo -e "$COLOR1 $NC ISP & City     : $ISP & $CITY"
 echo -e "$COLOR1 $NC Current Domain : $(cat /etc/xray/domain)"
-echo -e "$COLOR1 $NC IP-VPS         : ${COLOR1}$IPVPS${NC}"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1 $NC IP-VPS         : ${COLOR1}$IPVPS"
+echo -e ""
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│$NC[ SSH WS : ${status_ws} ]  [ XRAY : ${status_xray} ]  [ NGINX : ${status_nginx} ]$COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "│ ${COLOR1}[01]${NC} • SSHWS[${YELLOW}Menu${NC}]   ${COLOR1}[07]${NC} • THEME[${YELLOW}Menu${NC}]$COLOR1│$NC"   
-echo -e "│ ${COLOR1}[02]${NC} • VMESS[${YELLOW}Menu${NC}]   ${COLOR1}[08]${NC} • BACKUP[${YELLOW}Menu${NC}]$COLOR1│$NC"  
-echo -e "│ ${COLOR1}[03]${NC} • VLESS[${YELLOW}Menu${NC}]   ${COLOR1}[09]${NC} • ADD HOST/DOMAIN  $COLOR1│$NC"  
-echo -e "│ ${COLOR1}[04]${NC} • TROJAN[${YELLOW}Menu${NC}]   ${COLOR1}[10]${NC} • RENEW CERT       $COLOR1│$NC"  
-echo -e "│ ${COLOR1}[05]${NC} • SS WS[${YELLOW}Menu${NC}]   ${COLOR1}[11]${NC} • SETTINGS[${YELLOW}Menu${NC}]  $COLOR1│$NC"
-echo -e "│ ${COLOR1}[06]${NC} • SET DNS[${YELLOW}Menu${NC}]   ${COLOR1}[12]${NC} • INFO[${YELLOW}Menu${NC}]  $COLOR1│$NC"
+echo -e ""
+echo -e "   ${COLOR1}[01]${NC} • SSHWS[${YELLOW}Menu${NC}]"
+echo -e "   ${COLOR1}[02]${NC} • VMESS[${YELLOW}Menu${NC}]"
+echo -e "   ${COLOR1}[03]${NC} • VLESS[${YELLOW}Menu${NC}]"
+echo -e "   ${COLOR1}[04]${NC} • TROJAN[${YELLOW}Menu${NC}]"
+echo -e "   ${COLOR1}[05]${NC} • SS WS[${YELLOW}Menu${NC}]"
+echo -e "   ${COLOR1}[06]${NC} • SET DNS[${YELLOW}Menu${NC}]"
+echo -e "   ${COLOR1}[07]${NC} • THEME[${YELLOW}Menu${NC}]"
+echo -e "   ${COLOR1}[08]${NC} • BACKUP[${YELLOW}Menu${NC}]"
+echo -e "   ${COLOR1}[09]${NC} • ADD HOST/DOMAIN $NC"
+echo -e "   ${COLOR1}[10]${NC} • RENEW CERT $NC"  
+echo -e "   ${COLOR1}[11]${NC} • SETTINGS[${YELLOW}Menu${NC}]"
+echo -e "   ${COLOR1}[12]${NC} • INFO[${YELLOW}Menu${NC}]"
 if [ "$Isadmin" = "ON" ]; then
 echo -e "                                                  $COLOR1│$NC"
-echo -e "  ${COLOR1}[13]${NC} • REG IP  [${YELLOW}Menu${NC}]   ${COLOR1}[14]${NC} • SET BOT  [${YELLOW}Menu${NC}]  $COLOR1│$NC"
+echo -e "  ${COLOR1}[13]${NC} • REG IP  [${YELLOW}Menu${NC}]"
+echo -e "  ${COLOR1}[14]${NC} • SET BOT  [${YELLOW}Menu${NC}]"
 ressee="menu-ip"
 bottt="menu-bot"
 else
 ressee="menu"
 bottt="menu"
 fi
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e ""
 myver="$(cat /opt/.ver)"
 
 if [[ $serverV > $myver ]]; then
@@ -216,7 +223,7 @@ datediff() {
 }
 mai="datediff "$Exp" "$DATE""
 
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐$NC"
+echo -e ""
 echo -e "$COLOR1 $NC Version     :${COLOR1} $(cat /opt/.ver) Latest Version${NC}"
 echo -e "$COLOR1 $NC Client Name : $Name"
 if [ $exp \> 1000 ];
@@ -225,9 +232,9 @@ then
 else
     datediff "$Exp" "$DATE"
 fi;
-echo -e "$COLOR1└─────────────────────────────────────────────────┘$NC"
+echo -e ""
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}                • 𝕊𝔸ℕ𝔻𝔸𝕂𝔸ℕ 𝕍ℙℕ •                 $COLOR1│$NC"
+echo -e "$COLOR1${NC}                • 𝕊𝔸ℕ𝔻𝔸𝕂𝔸ℕ 𝕍ℙℕ •                 $COLOR1$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 echo -ne " Select menu : "; read opt
