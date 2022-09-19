@@ -86,21 +86,22 @@ echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$COLBG1                  • BOT PANEL •                   $NC"
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$NC"
 dircreate
-[[ ! -f /root/multi/bot.conf ]] && {
-echo -e "
-• Status ${GREEN}Installer${NC} And ${GREEN}Running!${NC}
-"
-[[ ! -f /root/ResBotAuth ]] && {
-echo -ne " API TOKEN : "
-read bot_tkn
-echo "Toket: $bot_tkn" >/root/ResBotAuth
-echo -ne " ADMIN ID  : "
-read adm_ids
-echo "Admin_ID: $adm_ids" >>/root/ResBotAuth
-}
+[[ ! -f /root/multi/bot.conf ]] && 
+{
+  echo -e "
+  • Status ${GREEN}Installer${NC} And ${GREEN}Running!${NC}"
+   [[ ! -f /root/ResBotAuth ]] && 
+   {
+    echo -ne " API TOKEN : "
+    read bot_tkn
+    echo "Toket: $bot_tkn" >/root/ResBotAuth
+    echo -ne " ADMIN ID  : "
+    read adm_ids
+    echo "Admin_ID: $adm_ids" >>/root/ResBotAuth
+   }
 echo -ne " BOT NAME : "
 read bot_user
-[[ -z $bot_user ]] && bot_user="squidBot"
+[[ -z $bot_user ]] && bot_user="SandakanVPNBOT"
 echo ""
 echo -ne " LIMIT     : "
 read limit_pnl
@@ -110,18 +111,23 @@ cat <<-EOF >/root/multi/bot.conf
 Botname: $bot_user
 Limit: $limit_pnl
 EOF
-
-fun_bot1() {
+}
+}
+fun_bot1() 
+{
 clear
-[[ ! -e "/etc/.maAsiss/.Shellbtsss" ]] && {
+[[ ! -e "/etc/.maAsiss/.Shellbtsss" ]] && 
+ {
 wget -qO- https://raw.githubusercontent.com/SandakanVPNTrickster/bot_panel/main/BotAPI.sh >/etc/.maAsiss/.Shellbtsss
-}
-[[ "$(grep -wc "sam_bot" "/etc/rc.local")" = '0' ]] && {
+ }
+[[ "$(grep -wc "sam_bot" "/etc/rc.local")" = '0' ]] && 
+ {
 sed -i '$ i\screen -dmS sam_bot bbt' /etc/rc.local >/dev/null 2>&1
-}
+ }
 }
 screen -dmS sam_bot bbt >/dev/null 2>&1
 fun_bot1
+{
 [[ $(ps x | grep "sam_bot" | grep -v grep | wc -l) != '0' ]] && {
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$NC"
 echo -e "$COLBG1                  • BOT PANEL •                   $NC"
@@ -133,6 +139,7 @@ echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━�
 echo -e ""
 read -n 1 -s -r -p " Press any key to back on menu"
 menu-bot
+}
 } || {
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$NC"
 echo -e "$COLBG1                  • BOT PANEL •                   $NC"
@@ -144,7 +151,6 @@ echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━�
 echo -e ""
 read -n 1 -s -r -p " Press any key to back on menu"
 menu-bot
-}
 } || {
 clear
 fun_bot2() {
@@ -156,6 +162,7 @@ rm -f /root/multi/bot.conf
 sleep 1
 }
 fun_bot2
+{
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$NC"
 echo -e "$COLBG1                  • BOT PANEL •                   $NC"
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$NC"
