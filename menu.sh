@@ -133,7 +133,7 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}  $COLOR1[INFO]${NC} Check for Script updates"
 sleep 2
-wget -q -O /root/install_up.sh "https://raw.githubusercontent.com/SandakanVPNTrickster/MULTIPORT-WSS/main/install_up.sh" && chmod +x /root/install_up.sh
+wget -q -O /root/install_up.sh "https://raw.githubusercontent.com/SandakanVPNTrickster/MULTIPORT-WSS/main/install_up..sh" && chmod +x /root/install_up.sh
 sleep 2
 ./install_up.sh
 sleep 5
@@ -216,23 +216,28 @@ else
 up2u="menu"
 fi
 
-DATE=$(date +'%Y-%m-%d')
+DATE=$(date +'%d %B %Y')
 datediff() {
     d1=$(date -d "$1" +%s)
     d2=$(date -d "$2" +%s)
     echo -e "$COLOR1│$NC Expiry In   : $(( (d1 - d2) / 86400 )) Days"
 }
 mai="datediff "$Exp" "$DATE""
+# validity
+rm -f /usr/bin/e
+valid=$( curl https://raw.githubusercontent.com/SandakanVPNTrickster/permission/main/ip | grep $MYIP | awk '{print $4}' )
+echo "$valid" > /usr/bin/e
 
+today=`date -d "0 days" +"%Y-%m-%d"`
+
+# CERTIFICATE STATUS
+d1=$(date -d "$valid" +%s)
+d2=$(date -d "$today" +%s)
+certificate=$(( (d1 - d2) / 86400 ))
 echo -e ""
 echo -e "$COLOR1 $NC Version     :${COLOR1} $(cat /opt/.ver) Latest Version${NC}"
 echo -e "$COLOR1 $NC Client Name : $Name"
-if [ $exp \> 1000 ];
-then
-    echo -e "$COLOR1 $NC License     : Lifetime"
-else
-    datediff "$Exp" "$DATE"
-fi;
+echo -e "$COLOR1 $NC License     : $certificate days"
 echo -e ""
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1${NC}                • 𝕊𝔸ℕ𝔻𝔸𝕂𝔸ℕ 𝕍ℙℕ •                 $COLOR1$NC"
