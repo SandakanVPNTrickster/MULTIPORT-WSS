@@ -216,7 +216,7 @@ else
 up2u="menu"
 fi
 
-DATE=$(date +'%d %B %Y')
+DATE=$(date +'%Y-%m-%d')
 datediff() {
     d1=$(date -d "$1" +%s)
     d2=$(date -d "$2" +%s)
