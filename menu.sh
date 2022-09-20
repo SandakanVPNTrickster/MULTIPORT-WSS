@@ -228,7 +228,7 @@ rm -f /usr/bin/e
 valid=$( curl https://raw.githubusercontent.com/SandakanVPNTrickster/permission/main/ip | grep $MYIP | awk '{print $4}' )
 echo "$valid" > /usr/bin/e
 
-today=`date -d "0 days" +"%Y-%m-%d"`
+today=`date -d "0 days" +"%d-%m-%Y"`
 
 # CERTIFICATE STATUS
 d1=$(date -d "$valid" +%s)
