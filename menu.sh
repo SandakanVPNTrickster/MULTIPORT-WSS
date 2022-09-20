@@ -223,15 +223,11 @@ datediff() {
     echo -e "$COLOR1│$NC Expiry In   : $(( (d1 - d2) / 86400 )) Days"
 }
 mai="datediff "$Exp" "$DATE""
-# validity
-rm -f /usr/bin/e
-valid=$( curl https://raw.githubusercontent.com/SandakanVPNTrickster/permission/main/ip | grep $MYIP | awk '{print $4}' )
-echo "$valid" > /usr/bin/e
 
-today=`date -d "0 days" +"%d-%m-%Y"`
+today=`date -d "0 days" +"%Y-%m-%d"`
 
 # CERTIFICATE STATUS
-d1=$(date -d "$valid" +%s)
+d1=$(date -d "$exp" +%s)
 d2=$(date -d "$today" +%s)
 certificate=$(( (d1 - d2) / 86400 ))
 echo -e ""
