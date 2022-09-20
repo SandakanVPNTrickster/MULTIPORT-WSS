@@ -194,16 +194,16 @@ echo -e "   ${COLOR1}[09]${NC} • SETTINGS [${YELLOW}Menu${NC}]"
 echo -e "   ${COLOR1}[10]${NC} • INFO     [${YELLOW}Menu${NC}]"
 echo -e "   ${COLOR1}[11]${NC} • ADD HOST/DOMAIN $NC"
 echo -e "   ${COLOR1}[12]${NC} • RENEW CERT $NC"  
-if [ "$Isadmin" = "ON" ]; then
-echo -e "                                                  $COLOR1$NC"
-echo -e "   ${COLOR1}[13]${NC} • REG IP   [${YELLOW}Menu${NC}]"
-echo -e "   ${COLOR1}[14]${NC} • SET BOT  [${YELLOW}Menu${NC}]"
-ressee="menu-ip"
-bottt="menu-bot"
-else
-ressee="menu"
-bottt="menu"
-fi
+#if [ "$Isadmin" = "ON" ]; then
+#echo -e "                                                  $COLOR1$NC"
+#echo -e "   ${COLOR1}[13]${NC} • REG IP   [${YELLOW}Menu${NC}]"
+#echo -e "   ${COLOR1}[14]${NC} • SET BOT  [${YELLOW}Menu${NC}]"
+#ressee="menu-ip"
+#bottt="menu-bot"
+#else
+#ressee="menu"
+#bottt="menu"
+#fi
 echo -e ""
 myver="$(cat /opt/.ver)"
 
@@ -231,13 +231,15 @@ d1=$(date -d "$exp" +%s)
 d2=$(date -d "$today" +%s)
 certificate=$(( (d1 - d2) / 86400 ))
 echo -e ""
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 $NC Version     :${COLOR1} $(cat /opt/.ver) Latest Version${NC}"
 echo -e "$COLOR1 $NC Client Name : $Name"
 echo -e "$COLOR1 $NC License     : $certificate days"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1${NC}                • 𝕊𝔸ℕ𝔻𝔸𝕂𝔸ℕ 𝕍ℙℕ •                 $COLOR1$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -ne " Select menu : "; read opt
 case $opt in
@@ -253,8 +255,8 @@ case $opt in
 10) clear ; info ;;
 11) clear ; add-host ;;
 12) clear ; crtxray ;;
-13) clear ; $ressee ;;
-14) clear ; $bottt ;;
+#13) clear ; $ressee ;;
+#14) clear ; $bottt ;;
 100) clear ; $up2u ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;
