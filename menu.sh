@@ -133,11 +133,11 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}  $COLOR1[INFO]${NC} Check for Script updates"
 sleep 2
-wget -q -O /root/install_up.sh "https://raw.githubusercontent.com/SandakanVPNTrickster/MULTIPORT-WSS/main/install_up..sh" && chmod +x /root/install_up.sh
+wget -q -O /root/install-up.sh "https://raw.githubusercontent.com/SandakanVPNTrickster/MULTIPORT-WSS/main/install-up.sh" && chmod +x /root/install-up.sh
 sleep 2
-./install_up.sh
+./install-up.sh
 sleep 5
-rm /root/install_up.sh
+rm /root/install-up.sh
 rm /opt/.ver
 version_up=$( curl -sS https://raw.githubusercontent.com/SandakanVPNTrickster/MULTIPORT-WSS/main/version)
 echo "$version_up" > /opt/.ver
